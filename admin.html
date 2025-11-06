@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel – SwiftPass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <i class="fa-solid fa-plane-departure" style="color: #0b3b8e;"></i>
+        <span>SwiftPass</span>
+      </div>
+       <button class="nav-toggle" id="nav-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+      <nav id="nav-menu" >
+        <ul>
+          <li><a href="verifier.html">Back to Verifier</a></li>
+          <li><a href="#" id="logout-admin" data-logout>Logout</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Admin Panel</h2>
+    <p id="welcome-admin"></p>
+
+    <section class="kpi">
+      <div class="item">
+        <div class="label">Total users</div>
+        <div id="kpi-users" class="value">0</div>
+      </div>
+      <div class="item">
+        <div class="label">Active applications</div>
+        <div id="kpi-active" class="value">0</div>
+      </div>
+      <div class="item">
+        <div class="label">Verified</div>
+        <div id="kpi-verified" class="value">0</div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>User management</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="users-body"></tbody>
+        </table>
+      </div>
+
+      <div class="card">
+        <h3>Document types</h3>
+        <form id="add-doc-type">
+          <div class="grid-2">
+            <div class="input">
+              <label for="doc-type-name">New document type</label>
+              <input id="doc-type-name" placeholder="e.g., Passport">
+            </div>
+            <div class="input">
+              <label>&nbsp;</label>
+              <button class="btn" type="submit">Add</button>
+            </div>
+          </div>
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="doc-types-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Status by document type</h3>
+      <canvas id="statusChart" height="120"></canvas>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© SwiftPass</div>
+      <div class="links">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDNs & App -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  
+ <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  });
+</script>
+</body>
+</html>

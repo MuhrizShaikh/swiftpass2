@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact – SwiftPass</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav">
+      <div class="brand">
+       <i class="fa-solid fa-plane-departure" style="color: #0b3b8e;"></i>
+        <span>SwiftPass</span>
+      </div>
+       <button class="nav-toggle" id="nav-toggle">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+      <nav id="nav-menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="login.html">Applicant Login</a></li>
+          <li><a href="verifier-login.html">Verifier Login</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card" style="max-width: 640px; margin: 0 auto;">
+      <h2>Contact us</h2>
+      <form id="contact-form">
+        <div class="grid-2">
+          <div class="input">
+            <label for="name">Name</label>
+            <input id="name" required>
+          </div>
+          <div class="input">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" type="email" required>
+          </div>
+        </div>
+        <div class="input">
+          <label for="message">Message</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+
+      <div class="grid-2" style="margin-top: 16px;">
+        <div class="card">
+          <strong>Office</strong>
+          <p>Passport Verification Unit, Karāchi, Sindh, Pakistan</p>
+        </div>
+        <div class="card">
+          <strong>Hours</strong>
+          <p>Mon–Fri, 9:00–17:00 PKT</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© SwiftPass</div>
+      <div class="links">
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CDNs & App -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
+
+  <script src="js/script.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+    });
+  });
+</script>
+</body>
+</html>
